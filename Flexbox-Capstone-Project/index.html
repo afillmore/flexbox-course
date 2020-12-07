@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Proza Libre", sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            display: flex;
+
+        }
+
+        .container .navbar-wrapper {
+            display: flex;
+            background-color: silver;
+            width: 100%;
+            overflow: hidden;
+            height: 100px;
+            
+        }
+
+        .navbar-wrapper > .myName {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            margin-left: 40px;
+            font-size: .8em
+        }
+
+        .navbar-wrapper > .link-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            margin-left: 50px;
+            height: 100%;
+           
+        } 
+       
+        .navbar-wrapper > .link-group .link {
+            width: 90px;
+            height: 100%;
+            background-color: rgb(249, 244, 220)
+        }
+  
+        .navbar-wrapper > .link-group .link a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(61, 94, 92);
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .navbar-wrapper > .link-group .link:hover {
+            background-color: lightslategray;
+            cursor: pointer;
+        }
+
+        .navbar-wrapper > .link-group .link:hover a {
+            color: white;
+        }
+
+        .link-group > .link1 {
+        
+        }
+
+        .link-group > .link2 {
+           margin-right: 700px;
+        }
+        .link-group > .link3 {
+
+        }
+
+        .navbar-wrapper .link-group.active {
+            background-color: silver;
+            color: white;
+        }
+
+        .navbar-wrapper .icon {
+            display: none;
+            text-decoration: none;
+            color: rgb(249, 244, 220);
+        }
+        @media screen and (max-width: 600px) {
+            .navbar-wrapper .link-group:not(:first-child) {display: none;}
+            .navbar-wrapper .link-group.icon {
+            float: right;
+            display: block;
+  }
+}
+        @media screen and (max-width: 600px) {
+        .navbar-wrapper .link-group:not(:first-child) {display: none;}
+        .navbar-wrapper .icon {
+         float: left;
+         display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+        .navbar-wrapper.responsive {position: relative;}
+        .navbar-wrapper.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+        .navbar-wrapper.responsive {
+        float: none;
+        display: flex;
+        text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class='container'>
+        <div class='navbar-wrapper' id="navbar">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class='myName'>
+                <h1>andrew fillmore</h1>
+            </div>
+            <div class='link-group'>
+                <div class='link link1'>
+                    <a href="#">
+                        Link 1
+                    </a>
+                </div>
+                <div class='link link2'>
+                    <a href="#">
+                        Link 2
+                    </a>
+                </div>
+                <div class='link link3'>
+                    <a href="#">
+                        Link 3
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("navbar");
+          if (x.className === "navbar-wrapper") {
+            x.className += " responsive";
+          } else {
+            x.className = "navbar-wrapper";
+          }
+        }
+    </script>
+</body>
+
+</html>
